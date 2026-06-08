@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 180">
+  <rect width="512" height="180" fill="#fff"/>
+  <g fill="#7b2382">
+    <circle cx="76" cy="90" r="54" fill="none" stroke="#7b2382" stroke-width="6"/>
+    <circle cx="76" cy="90" r="34" fill="none" stroke="#7b2382" stroke-width="3"/>
+    <path d="M76 58l9 24h25l-20 15 8 24-22-14-22 14 8-24-20-15h25z"/>
+    <text x="76" y="28" text-anchor="middle" font-family="Georgia, serif" font-size="13">TSINGHUA UNIVERSITY</text>
+    <text x="76" y="158" text-anchor="middle" font-family="Georgia, serif" font-size="13">1911</text>
+    <text x="178" y="92" font-family="KaiTi, STKaiti, serif" font-size="72" font-weight="700">清华大学</text>
+    <text x="184" y="135" font-family="Georgia, serif" font-size="38">Tsinghua University</text>
+  </g>
+</svg>

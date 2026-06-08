@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 250">
+  <rect width="980" height="250" fill="#fff"/>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L9,3 L0,6 Z" fill="#111"/>
+    </marker>
+  </defs>
+  <g font-family="Arial, Helvetica, sans-serif" fill="#111">
+    <text x="18" y="32" font-size="22" font-weight="700">① SFT</text>
+    <text x="225" y="32" font-size="22" font-weight="700">② Explore</text>
+    <text x="600" y="32" font-size="22" font-weight="700">③ Reward</text>
+    <text x="614" y="60" font-size="22" font-weight="700">Model Training</text>
+    <text x="780" y="32" font-size="22" font-weight="700">④ Inference</text>
+  </g>
+  <path d="M206 16v222M586 16v222M754 16v222" stroke="#0b6f95" stroke-width="3" stroke-dasharray="10 7"/>
+
+  <g font-family="Arial, Helvetica, sans-serif" text-anchor="middle">
+    <text x="92" y="72" font-size="24">75%</text>
+    <path d="M94 76c36-36 89-31 122 7" fill="none" stroke="#111" stroke-width="4" marker-end="url(#arrow)"/>
+    <text x="88" y="126" font-size="24">25%</text>
+    <path d="M88 128c16 16 34 24 56 24" fill="none" stroke="#111" stroke-width="3" marker-end="url(#arrow)"/>
+    <rect x="18" y="158" width="66" height="54" rx="3" fill="#e7f6fb" stroke="#111" stroke-width="2"/>
+    <rect x="20" y="162" width="62" height="14" fill="#2b92b8"/>
+    <rect x="20" y="178" width="62" height="14" fill="#ff8b2b"/>
+    <rect x="20" y="194" width="62" height="14" fill="#e3d424"/>
+    <text x="51" y="174" font-size="10" fill="#fff">Webshop</text>
+    <text x="51" y="190" font-size="10" fill="#fff">Alfworld</text>
+    <text x="51" y="206" font-size="10">Sciworld</text>
+    <text x="51" y="235" font-size="16">Dataset</text>
+    <path d="M143 118l26 12-26 12z" fill="#a6c3ce" stroke="#111"/>
+    <path d="M150 126v32" stroke="#111" stroke-width="3" marker-end="url(#arrow)"/>
+    <rect x="124" y="170" width="80" height="44" rx="8" fill="#edf8fb" stroke="#111" stroke-width="3"/>
+    <rect x="108" y="183" width="16" height="24" rx="3" fill="#2b92b8" stroke="#111"/>
+    <rect x="204" y="183" width="16" height="24" rx="3" fill="#2b92b8" stroke="#111"/>
+    <circle cx="149" cy="192" r="3" fill="#111"/>
+    <circle cx="179" cy="192" r="3" fill="#111"/>
+    <text x="164" y="235" font-size="16">LLM</text>
+  </g>
+
+  <g font-family="Arial, Helvetica, sans-serif" text-anchor="middle">
+    <path d="M235 120c25-52 88-65 132-28" fill="none" stroke="#111" stroke-width="4" marker-end="url(#arrow)"/>
+    <path d="M350 122c-18 42-68 58-104 25" fill="none" stroke="#0d7f8c" stroke-width="5" marker-end="url(#arrow)"/>
+    <text x="300" y="96" font-size="16">Environment</text>
+    <g transform="translate(250 116)">
+      <rect x="0" y="0" width="24" height="40" fill="#d9edf2" stroke="#111"/>
+      <rect x="8" y="-5" width="24" height="40" fill="#c7e2ea" stroke="#111"/>
+      <rect x="16" y="-10" width="24" height="40" fill="#b5d5df" stroke="#111"/>
+    </g>
+    <rect x="300" y="166" width="86" height="48" rx="8" fill="#edf8fb" stroke="#111" stroke-width="3"/>
+    <rect x="284" y="182" width="16" height="24" rx="3" fill="#2b92b8" stroke="#111"/>
+    <rect x="386" y="182" width="16" height="24" rx="3" fill="#2b92b8" stroke="#111"/>
+    <circle cx="326" cy="188" r="3" fill="#111"/>
+    <circle cx="360" cy="188" r="3" fill="#111"/>
+    <text x="343" y="235" font-size="16">SFT Agent</text>
+
+    <g transform="translate(426 70)">
+      <circle cx="0" cy="38" r="17" fill="#2f8cb7" stroke="#111"/>
+      <text x="0" y="44" font-size="14" fill="#fff">s1</text>
+      <circle cx="56" cy="15" r="11" fill="#eaf5f8" stroke="#111"/>
+      <text x="56" y="20" font-size="11">s1</text>
+      <circle cx="112" cy="18" r="11" fill="#eaf5f8" stroke="#111"/>
+      <text x="112" y="23" font-size="11">s1</text>
+      <circle cx="165" cy="20" r="14" fill="#6e7180" stroke="#111"/>
+      <text x="165" y="25" font-size="12" fill="#fff">s4</text>
+      <path d="M18 34C36 21 42 17 48 16M68 16h34M124 18h41" stroke="#111" fill="none" marker-end="url(#arrow)"/>
+      <text x="34" y="42" font-size="14">0</text>
+      <text x="86" y="35" font-size="14">0</text>
+      <text x="142" y="38" font-size="14">0</text>
+      <circle cx="56" cy="91" r="11" fill="#eaf5f8" stroke="#111"/>
+      <circle cx="112" cy="92" r="11" fill="#eaf5f8" stroke="#111"/>
+      <circle cx="166" cy="94" r="14" fill="#6e7180" stroke="#111"/>
+      <path d="M16 42c28 20 32 35 48 48M68 90h34M124 92h41" stroke="#111" fill="none" marker-end="url(#arrow)"/>
+      <text x="34" y="89" font-size="14">0.8</text>
+      <text x="84" y="113" font-size="14">0.5</text>
+      <text x="140" y="115" font-size="14">0.5</text>
+      <text x="90" y="145" font-size="15">Reward Annotation</text>
+    </g>
+  </g>
+
+  <g font-family="Arial, Helvetica, sans-serif" text-anchor="middle">
+    <text x="640" y="120" font-size="24">{(s, r), ...}</text>
+    <path d="M565 132h112c30 0 38 18 22 40" fill="none" stroke="#111" stroke-width="4" marker-end="url(#arrow)"/>
+    <rect x="628" y="170" width="82" height="44" rx="8" fill="#edf8fb" stroke="#111" stroke-width="3"/>
+    <rect x="612" y="183" width="16" height="24" rx="3" fill="#2b92b8" stroke="#111"/>
+    <circle cx="652" cy="192" r="3" fill="#111"/>
+    <circle cx="682" cy="192" r="3" fill="#111"/>
+    <rect x="680" y="149" width="18" height="16" rx="3" fill="#d71920" stroke="#111" transform="rotate(24 689 157)"/>
+    <rect x="698" y="158" width="18" height="16" rx="3" fill="#d71920" stroke="#111" transform="rotate(24 707 166)"/>
+    <text x="670" y="235" font-size="16">Reward Model</text>
+  </g>
+
+  <g font-family="Arial, Helvetica, sans-serif" text-anchor="middle">
+    <path d="M754 250V118c42-24 98-19 124 0v132z" fill="#8a1c6d" stroke="#111" stroke-width="3"/>
+    <text x="816" y="205" font-size="16" fill="#fff" font-weight="700">Policy Model</text>
+    <text x="816" y="236" font-size="16" fill="#fff" font-weight="700">Unseen Task</text>
+    <rect x="802" y="150" width="84" height="46" rx="7" fill="#fff" stroke="#111" stroke-width="3"/>
+    <rect x="787" y="165" width="15" height="24" rx="3" fill="#2b92b8" stroke="#111"/>
+    <circle cx="829" cy="171" r="3" fill="#111"/>
+    <circle cx="860" cy="171" r="3" fill="#111"/>
+    <path d="M856 136c30-20 49-42 54-78" stroke="#451844" stroke-width="4" stroke-dasharray="5 5" fill="none" marker-end="url(#arrow)"/>
+    <path d="M872 168c48-7 66-29 84-63" stroke="#451844" stroke-width="4" stroke-dasharray="5 5" fill="none" marker-end="url(#arrow)"/>
+    <text x="850" y="84" font-size="15">Action 1</text>
+    <text x="940" y="134" font-size="15">Action 2</text>
+    <rect x="882" y="48" width="45" height="29" rx="5" fill="#fff" stroke="#111" stroke-width="2"/>
+    <text x="905" y="69" font-size="15">0.8</text>
+    <rect x="914" y="88" width="50" height="24" rx="5" fill="#edf8fb" stroke="#111" stroke-width="2"/>
+    <rect x="916" y="113" width="45" height="29" rx="5" fill="#fff" stroke="#111" stroke-width="2"/>
+    <text x="938" y="134" font-size="15">0.3</text>
+  </g>
+</svg>
