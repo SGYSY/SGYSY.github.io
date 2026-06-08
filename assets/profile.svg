@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#dff4ff"/>
+      <stop offset="0.5" stop-color="#eef7fb"/>
+      <stop offset="1" stop-color="#d8f5ec"/>
+    </linearGradient>
+  </defs>
+  <rect width="480" height="480" rx="30" fill="url(#bg)"/>
+  <circle cx="240" cy="178" r="78" fill="#1769d2" opacity=".14"/>
+  <circle cx="240" cy="170" r="62" fill="#fff"/>
+  <path d="M122 402c18-83 78-126 118-126s100 43 118 126" fill="#fff"/>
+  <text x="240" y="259" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="62" font-weight="700" fill="#1769d2">SY</text>
+</svg>

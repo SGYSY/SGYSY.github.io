@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="DataEvolver: project page.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DataEvolver</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.4/dist/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-slider@2.0.4/dist/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.4/dist/js/bulma-carousel.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bulma-slider@2.0.4/dist/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<!-- ============ HERO / TITLE ============ -->
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-2 publication-title">
+            <img src="./static/images/logo.png" alt="DataEvolver logo" class="publication-logo">
+            <span class="publication-title-brand">DataEvolver:</span>
+            <span class="publication-title-rest">Self-Evolving Multi-Agent Data Construction for Text-Rich Image Generation</span>
+          </h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><a href="#">Siyu Yan</a><sup>1,2</sup><sup>*</sup>,</span>
+            <span class="author-block"><a href="#">Yizhen Gao</a><sup>1</sup><sup>*</sup>,</span>
+            <span class="author-block"><a href="#">Yilin Wang</a><sup>1</sup>,</span>
+            <span class="author-block"><a href="#">Dongxing Mao</a><sup>1</sup>,</span>
+            <span class="author-block"><a href="#">Alex Jinpeng Wang</a><sup>1</sup><sup>&dagger;</sup></span>
+          </div>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Central South University</span>&nbsp;&nbsp;
+            <span class="author-block"><sup>2</sup>The Hong Kong University of Science and Technology</span>
+          </div>
+          <div class="is-size-6 publication-authors" style="margin-top: 0.3rem;">
+            <span class="author-block"><sup>*</sup>Equal contribution.</span>&nbsp;&nbsp;
+            <span class="author-block"><sup>&dagger;</sup>Corresponding author.</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="./static/DataEvolver.pdf" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fas fa-file-pdf"></i></span><span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="#" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="ai ai-arxiv"></i></span><span>arXiv</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://csu-jpg.github.io/DataEvolver" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fab fa-github"></i></span><span>Code</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TEASER ============ -->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="./static/images/teaser.png" alt="DataEvolver teaser" style="width:100%; border-radius:8px;"
+           onerror="this.style.display='none'; document.getElementById('teaser-ph').style.display='flex';">
+      <div id="teaser-ph" style="display:none; height:280px; align-items:center; justify-content:center; background:#f0f0f0; border-radius:8px; color:#999;">
+        [ Figure 1 (overview + OCR-F1 scaling) — place at static/images/teaser.png ]
+      </div>
+      <h2 class="subtitle has-text-centered" style="margin-top:1rem;">
+        <b>Overview of DataEvolver.</b> Unlike static <i>crawl–filter–freeze</i> pipelines that discard rejected
+        samples, DataEvolver converts rejection patterns into feedback for iterative construction-policy updates.
+      </h2>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABSTRACT ============ -->
+<section class="section abstract-section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">📄 Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Text-rich image generation is one of the most challenging settings in image generation, since models
+            must simultaneously produce visually realistic images and render legible, semantically aligned, and
+            layout-consistent text. Existing data pipelines usually follow a static <i>crawl–filter–freeze</i>
+            paradigm: they collect candidate samples, filter them once, and freeze the accepted data for training.
+            This design discards useful failure signals, including OCR errors, semantic mismatches, and coverage
+            gaps. As a result, later construction rounds may repeat the same failure modes.
+          </p>
+          <p>
+            To address these limitations, we propose <b>DataEvolver</b>, a self-evolving multi-agent framework for
+            text-rich image data construction. DataEvolver treats data construction as feedback-driven construction
+            policy evolution. A <b>Retriever</b> collects candidate samples, a <b>Verifier</b> assigns quality scores
+            and rejection causes, a <b>Critic</b> summarizes round-level feedback into semantic feedback, and a
+            <b>Generator</b> completes under-covered regions through targeted synthesis. The updated feedback memory
+            then guides the next construction round.
+          </p>
+          <p>
+            Experiments on text-rich image generation benchmarks show that DataEvolver produces more useful training
+            data than fixed-dataset baselines under matched data budgets. At the 0.75M scale on PixArt-α, DataEvolver
+            improves OCR-F1 over the strongest baseline by <b>85.3%</b> on TextScenesHQ and <b>35.3%</b> on
+            LongTextBench. The improvements are consistent across both benchmarks and also transfer to Show-o2,
+            indicating that the benefit of DataEvolver is not tied to a single downstream generator.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HIGHLIGHTS ============ -->
+<section class="section" style="padding-top:0;">
+  <div class="container is-max-desktop">
+    <div class="column is-full">
+      <h2 class="title is-3 has-text-centered">💫 Highlights</h2>
+      <div class="content has-text-justified">
+        <ol>
+          <li>
+            <b>A feedback-driven view of data construction</b>. We reformulate text-rich image data construction
+            as construction <i>policy</i> evolution, where the optimization target is the construction process itself
+            rather than a fixed dataset. Rejected samples become actionable feedback instead of being discarded.
+          </li>
+          <li>
+            <b>A self-evolving multi-agent framework</b>. DataEvolver is a closed-loop system of four cooperative
+            agents (Retriever, Verifier, Critic, Generator) that transforms round-level verification outcomes into
+            reusable semantic feedback for subsequent construction rounds — all in natural-language policy space,
+            without any model training or fine-tuning.
+          </li>
+          <li>
+            <b>Strong, transferable gains</b>. Under matched data budgets, at the 0.75M scale on PixArt-α DataEvolver
+            improves OCR-F1 over the strongest baseline by <b>85.3%</b> on TextScenesHQ and <b>35.3%</b> on
+            LongTextBench, with consistent improvements that also transfer to Show-o2.
+          </li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ APPROACH ============ -->
+<section class="section" style="padding-top:0;">
+  <div class="container is-max-desktop">
+    <div class="column is-full">
+      <h2 class="title is-3 has-text-centered">🌟 Approach</h2>
+      <div class="content has-text-centered">
+        <img src="./static/images/pipeline.png" alt="DataEvolver pipeline" style="width:100%; border-radius:8px;"
+             onerror="this.style.display='none'; document.getElementById('pipeline-ph').style.display='flex';">
+        <div id="pipeline-ph" style="display:none; height:320px; align-items:center; justify-content:center; background:#f0f0f0; border-radius:8px; color:#999;">
+          [ Figure 2 (DataEvolver framework) — place at static/images/pipeline.png ]
+        </div>
+      </div>
+      <div class="content has-text-justified" style="margin-top:1.5rem;">
+        <p>
+          <b>Closed-loop construction.</b> DataEvolver constructs text-rich image data through a closed loop with
+          four agents. At round <i>t</i>, the system is governed by a data construction policy
+          <i>π<sub>t</sub> = (Q<sub>t</sub>, P<sub>t</sub>, E<sub>t</sub>)</i>, combining a retrieval policy, a
+          generation-prompt policy, and an experience library of high-value feedback from previous rounds.
+        </p>
+        <ul>
+          <li>
+            <b>Retriever — queries to candidate pool.</b> Operates under a policy-conditioned query space that adapts
+            over time, generating structured query templates (topic keywords, subtopic descriptors, semantic
+            expansions, source constraints) and deduplicating before verification to build a topic-aware candidate pool.
+          </li>
+          <li>
+            <b>Verifier — candidates to pass set and feedback.</b> Evaluates perceptual image quality, text
+            recognition quality, and semantic consistency. Beyond a binary verdict, it summarizes each round into a
+            multi-dimensional feedback signal <i>s<sub>t</sub> = (P<sub>t</sub>, Ō<sub>t</sub>, C̄<sub>t</sub>,
+            Ī<sub>t</sub>, R<sub>t</sub>)</i> and records dominant rejection causes (blur, OCR failure, semantic
+            mismatch, layout corruption).
+          </li>
+          <li>
+            <b>Critic — feedback to next-round policy.</b> Converts round-level statistics and rejection patterns into
+            natural-language semantic feedback <i>F<sub>t</sub> = Critic(s<sub>t</sub>, s<sub>t−1</sub>,
+            E<sub>t−1</sub>)</i>, which revises the next-round policy
+            <i>π<sub>t+1</sub> = Compose(π<sub>t</sub>, F<sub>t</sub>, E<sub>t</sub>)</i> — entirely in language space,
+            without gradient updates.
+          </li>
+          <li>
+            <b>Generator — coverage gaps to synthetic completion.</b> Measures topic–subtopic coverage of the pass
+            set, flags under-represented regions, and synthesizes targeted samples that pass the same fixed
+            verification pipeline before admission.
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CRITIC EXAMPLE ============ -->
+<section class="section" style="padding-top:0;">
+  <div class="container is-max-desktop">
+    <div class="column is-full">
+      <h2 class="title is-3 has-text-centered">🔁 Policy Evolution in Action</h2>
+      <div class="content has-text-centered">
+        <img src="./static/images/critic.png" alt="Critic-guided policy update" style="width:100%; border-radius:8px;"
+             onerror="this.style.display='none'; document.getElementById('critic-ph').style.display='flex';">
+        <div id="critic-ph" style="display:none; height:240px; align-items:center; justify-content:center; background:#f0f0f0; border-radius:8px; color:#999;">
+          [ Figure 3 (Critic-guided policy update) — place at static/images/critic.png ]
+        </div>
+      </div>
+      <div class="content has-text-justified" style="margin-top:1.5rem;">
+        <p>
+          <b>Example of Critic-guided policy update.</b> Given a duplicate-heavy construction round, the Critic
+          summarizes the failure pattern (near-duplicates, repeated layouts, low diversity) and produces
+          query-diversification guidance for the next round — requesting different layouts, colour schemes, writing
+          styles, and issuers. In this logged case, deduplication failures decrease from <b>278 to 148</b> after the
+          update.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ QUALITATIVE COMPARISON ============ -->
+<section class="section" style="padding-top:0;">
+  <div class="container is-max-desktop">
+    <div class="column is-full">
+      <h2 class="title is-3 has-text-centered">🖼️ Qualitative Comparison</h2>
+      <div class="content has-text-centered">
+        <img src="./static/images/qualitative.png" alt="Qualitative comparison" style="width:100%; border-radius:8px;"
+             onerror="this.style.display='none'; document.getElementById('qual-ph').style.display='flex';">
+        <div id="qual-ph" style="display:none; height:280px; align-items:center; justify-content:center; background:#f0f0f0; border-radius:8px; color:#999;">
+          [ Qualitative comparison — place at static/images/qualitative.png ]
+        </div>
+      </div>
+      <div class="content has-text-justified" style="margin-top:1.5rem;">
+        <p>
+          <b>Qualitative comparison.</b> Generators fine-tuned on DataEvolver data render text that is more legible,
+          better aligned with the prompt, and more layout-consistent than those trained on fixed-dataset baselines
+          under matched data budgets.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RESULTS ============ -->
+<section class="section" style="padding-top:0;">
+  <div class="container is-max-desktop">
+    <div class="column is-full">
+      <h2 class="title is-3 has-text-centered">📊 Results</h2>
+      <div class="content has-text-centered results-table-crop">
+        <img src="./static/images/table.png" alt="DataEvolver main results table" style="width:100%; border-radius:8px;"
+             onerror="this.style.display='none'; document.getElementById('results-ph').style.display='flex';">
+        <div id="results-ph" style="display:none; height:280px; align-items:center; justify-content:center; background:#f0f0f0; border-radius:8px; color:#999;">
+          [ Main results table — place at static/images/table.png ]
+        </div>
+      </div>
+      <div class="content has-text-justified" style="margin-top:1.5rem;">
+        <p>
+          <b>Main results.</b> Under matched data budgets, DataEvolver consistently improves OCR-oriented metrics that
+          directly reflect text rendering quality, while maintaining competitive semantic alignment and visual
+          quality. At the 0.75M scale on PixArt-α, OCR-F1 improves over the strongest baseline by <b>85.3%</b> on
+          TextScenesHQ and <b>35.3%</b> on LongTextBench. Removing the Critic or the Generator consistently degrades
+          OCR-F1, validating both feedback-based policy revision and targeted completion. Gains also transfer to
+          Show-o2.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CITATION ============ -->
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">Citation</h2>
+    <pre><code>@article{yan2026dataevolver,
+  title   = {DataEvolver: Self-Evolving Multi-Agent Data Construction for Text-Rich Image Generation},
+  author  = {Yan, Siyu and Gao, Yizhen and Wang, Yilin and Mao, Dongxing and Wang, Alex Jinpeng},
+  journal = {arXiv preprint},
+  year    = {2026},
+}</code></pre>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content has-text-centered">
+          <p>The template is borrowed from <a href="https://nerfies.github.io/">Nerfies</a>.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

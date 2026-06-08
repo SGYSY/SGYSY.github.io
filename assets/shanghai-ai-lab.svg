@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420">
+  <rect width="900" height="420" fill="#fff"/>
+  <g fill="#004a86">
+    <rect x="34" y="28" width="570" height="8"/>
+    <rect x="628" y="28" width="240" height="8"/>
+    <rect x="34" y="74" width="540" height="8"/>
+    <rect x="606" y="74" width="262" height="8"/>
+    <rect x="34" y="120" width="500" height="8"/>
+    <rect x="558" y="120" width="310" height="8"/>
+    <rect x="34" y="166" width="438" height="8"/>
+    <rect x="484" y="166" width="384" height="8"/>
+    <rect x="34" y="212" width="380" height="8"/>
+    <rect x="440" y="212" width="428" height="8"/>
+    <rect x="34" y="258" width="320" height="8"/>
+    <rect x="396" y="258" width="472" height="8"/>
+  </g>
+  <g fill="#211815" font-family="Songti SC, STSong, serif">
+    <text x="34" y="350" font-size="72" letter-spacing="12">上海人工智能实验室</text>
+    <text x="34" y="402" font-size="48">Shanghai Artificial Intelligence Laboratory</text>
+  </g>
+</svg>

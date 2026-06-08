@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 64">
+  <rect width="240" height="64" fill="#fff"/>
+  <g fill="#d71920">
+    <path d="M8 14l10-10 10 10-10 10zM8 50l10-10 10 10-10 10zM28 14l10-10 10 10-10 10zM28 50l10-10 10 10-10 10z"/>
+    <text x="54" y="44" font-family="Arial Black, Arial, Helvetica, sans-serif" font-size="38" font-weight="900">BOT</text>
+    <text x="133" y="44" font-family="Arial, Helvetica, sans-serif" font-size="38">PARK</text>
+  </g>
+</svg>
