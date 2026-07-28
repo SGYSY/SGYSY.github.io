@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="See2Think evaluates whether multimodal models genuinely use intermediate visual states during reasoning.">
+  <meta name="theme-color" content="#eef7ff">
+  <meta property="og:title" content="See2Think: Do Multimodal Models Really Use Intermediate Visual States?">
+  <meta property="og:description" content="A unified benchmark and diagnostic framework for intermediate visual-state use in multimodal reasoning.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://sgysy.github.io/seetothink/">
+  <meta property="og:image" content="https://sgysy.github.io/seetothink/assets/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="See2Think">
+  <meta name="twitter:description" content="Do multimodal models really use intermediate visual states?">
+  <meta name="twitter:image" content="https://sgysy.github.io/seetothink/assets/og.png">
+  <title>See2Think — Do Multimodal Models Really Use Intermediate Visual States?</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-nav">
+    <a class="wordmark" href="#top" aria-label="See2Think home">
+      <span>See</span><strong>2</strong><span>Think</span>
+    </a>
+    <nav aria-label="Page sections">
+      <a href="#overview">Overview</a>
+      <a href="#benchmark">Benchmark</a>
+      <a href="#vaot">VAoT</a>
+      <a href="#findings">Findings</a>
+      <a href="#citation">Citation</a>
+    </nav>
+    <a class="home-link" href="../">Siyu Yan ↗</a>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow">A diagnostic framework for multimodal visual reasoning</p>
+          <h1><span class="brand">See<span>2</span>Think</span><br>Do Multimodal Models Really Use Intermediate Visual States?</h1>
+          <p class="dek">
+            See2Think disentangles whether an intermediate visual state is <em>useful</em>
+            from whether a model’s reasoning behavior actually <em>depends</em> on it.
+          </p>
+          <div class="action-row">
+            <a class="button button-primary" href="./See2Think.pdf" target="_blank" rel="noopener">
+              <span aria-hidden="true">▤</span> Paper
+            </a>
+            <a class="button" href="https://github.com/CSU-JPG/See2Think" target="_blank" rel="noopener">
+              <span aria-hidden="true">⌘</span> Code
+            </a>
+            <a class="button" href="#citation">
+              <span aria-hidden="true">{ }</span> BibTeX
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <a href="./assets/framework-overview.png" target="_blank" rel="noopener" aria-label="Open the See2Think framework figure at full size">
+            <img src="./assets/framework-overview.png" alt="See2Think framework comparing traditional evaluation with process-level diagnosis">
+          </a>
+          <p>From final-answer evaluation to controlled diagnosis of visual-state use.</p>
+        </div>
+      </div>
+
+      <div class="contribution-grid" aria-label="Main contributions">
+        <article>
+          <span class="card-index">01</span>
+          <div>
+            <h2>See2ThinkBench</h2>
+            <p>1,200 open-ended, visually dependent problems spanning 12 task categories.</p>
+          </div>
+        </article>
+        <article>
+          <span class="card-index">02</span>
+          <div>
+            <h2>Three visual worlds</h2>
+            <p>2D structured reasoning, 3D scenes, and real-world visual reasoning.</p>
+          </div>
+        </article>
+        <article>
+          <span class="card-index">03</span>
+          <div>
+            <h2>Process diagnosis</h2>
+            <p>Action relevance, render faithfulness, and feedback uptake are measured separately.</p>
+          </div>
+        </article>
+        <article>
+          <span class="card-index">04</span>
+          <div>
+            <h2>Controlled interventions</h2>
+            <p>Corrupted feedback reveals when models behaviorally depend on returned visual states.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="paper-meta" aria-label="Paper authors and affiliations">
+      <p class="authors">
+        <a href="https://sgysy.github.io/" target="_blank" rel="noopener">Siyu Yan</a><sup>1,3,†</sup>,
+        Zhuoran Yan<sup>2,†</sup>,
+        Haiying Xu<sup>3,4,†</sup>,
+        Panhao Zhou<sup>2</sup>,
+        Jingyu Chen<sup>2</sup>,
+        Chenhao Ji<sup>3</sup>,
+        Shuo Cao<sup>3,5</sup>,
+        Yongheng Zhang<sup>2</sup>,
+        Haoze Liu<sup>3</sup>,
+        Siyu Zhang<sup>3,6</sup>,
+        Xiwen Gu<sup>7</sup>,
+        Yihao Liu<sup>3</sup>,
+        Alex Jinpeng Wang<sup>2,§</sup>
+      </p>
+      <div class="affiliations">
+        <span><sup>1</sup>HKUST</span>
+        <span><sup>2</sup>Central South University</span>
+        <span><sup>3</sup>Shanghai AI Laboratory</span>
+        <span><sup>4</sup>HKUST (Guangzhou)</span>
+        <span><sup>5</sup>USTC</span>
+        <span><sup>6</sup>Fudan University</span>
+        <span><sup>7</sup>Wuhan University</span>
+      </div>
+      <p class="author-notes"><sup>†</sup> Equal contribution &nbsp;·&nbsp; <sup>§</sup> Corresponding author</p>
+    </section>
+
+    <section class="section section-overview" id="overview">
+      <div class="section-label">
+        <span>01</span>
+        <p>Motivation</p>
+      </div>
+      <div class="section-content">
+        <p class="kicker">Beyond final answers</p>
+        <h2>Seeing a visual trace is not the same as knowing it was used.</h2>
+        <div class="two-column-copy">
+          <p>
+            Multimodal models increasingly draw auxiliary lines, annotate regions, invoke
+            visual tools, and construct intermediate images. Yet final-answer accuracy cannot
+            tell us whether the model chose a relevant visual action, whether that action was
+            rendered faithfully, or whether the returned state influenced later reasoning.
+          </p>
+          <p>
+            See2Think provides a unified framework for answering all three questions. It combines
+            a visually grounded benchmark with an observable and intervenable inference protocol,
+            enabling matched outcome-level and process-level evaluation.
+          </p>
+        </div>
+        <aside class="takeaway">
+          <span>Core question</span>
+          <p>When a model produces an intermediate visual state, is it reasoning <em>with</em> that state—or merely producing visual decoration?</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="benchmark">
+      <div class="section-label">
+        <span>02</span>
+        <p>Benchmark</p>
+      </div>
+      <div class="section-content">
+        <p class="kicker">See2ThinkBench</p>
+        <h2>1.2K visually dependent problems across 12 diverse tasks.</h2>
+        <p class="lead">
+          Every category contains 100 samples. Caption-only solvability filtering reduces
+          text-dominant shortcuts, while a unified answer interface supports consistent evaluation.
+        </p>
+        <a class="figure-link" href="./assets/benchmark-examples.png" target="_blank" rel="noopener">
+          <img class="figure figure-wide" src="./assets/benchmark-examples.png" alt="Representative examples from the twelve See2ThinkBench task categories" loading="lazy">
+        </a>
+        <p class="caption"><strong>See2ThinkBench at a glance.</strong> Twelve task categories organized into three visual reasoning environments.</p>
+
+        <div class="environment-grid">
+          <article class="environment environment-blue">
+            <span>6 tasks</span>
+            <h3>2D Structured</h3>
+            <p>Geometry, spatial puzzles, physics, chemistry, science QA, and abstract patterns.</p>
+          </article>
+          <article class="environment environment-green">
+            <span>2 tasks</span>
+            <h3>3D Scene</h3>
+            <p>Object attributes and compositional reasoning over synthetic 3D environments.</p>
+          </article>
+          <article class="environment environment-coral">
+            <span>4 tasks</span>
+            <h3>Real-world</h3>
+            <p>Robot manipulation, state change, commonsense scenes, and physical plausibility.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-tint" id="vaot">
+      <div class="section-label">
+        <span>03</span>
+        <p>Protocol</p>
+      </div>
+      <div class="section-content">
+        <p class="kicker">Visual Action-of-Thought</p>
+        <h2>An observable, intervenable loop for visual reasoning.</h2>
+        <p class="lead">
+          VAoT records alternating textual thoughts, structured visual actions, rendered states,
+          and subsequent reasoning. Because every visual action is externally executed and inspected,
+          the trajectory supports controlled intervention and process-level diagnosis.
+        </p>
+        <a class="figure-link" href="./assets/vaot-protocol.png" target="_blank" rel="noopener">
+          <img class="figure" src="./assets/vaot-protocol.png" alt="The four controlled See2Think inference settings" loading="lazy">
+        </a>
+        <p class="caption"><strong>Four matched settings.</strong> CoT, VAoT-NoRender, VAoT, and VAoT-WrongRender isolate planning, execution, and dependence on visual feedback.</p>
+
+        <div class="diagnostic-flow" aria-label="Three stages of process-level diagnosis">
+          <article>
+            <span>Plan</span>
+            <h3>Action Relevance</h3>
+            <p>Does the selected operation target evidence that matters for the task?</p>
+          </article>
+          <div class="flow-arrow" aria-hidden="true">→</div>
+          <article>
+            <span>Render</span>
+            <h3>Render Faithfulness</h3>
+            <p>Does the returned image correctly realize the requested visual action?</p>
+          </article>
+          <div class="flow-arrow" aria-hidden="true">→</div>
+          <article>
+            <span>Use</span>
+            <h3>Feedback Uptake</h3>
+            <p>Does subsequent reasoning incorporate information from the visual state?</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="findings">
+      <div class="section-label">
+        <span>04</span>
+        <p>Results</p>
+      </div>
+      <div class="section-content">
+        <p class="kicker">What we found</p>
+        <h2>Visual reasoning is conditional—not a universal accuracy booster.</h2>
+        <div class="result-stats">
+          <article>
+            <strong>1.2K</strong>
+            <span>samples per model and setting</span>
+          </article>
+          <article>
+            <strong>4</strong>
+            <span>representative multimodal models</span>
+          </article>
+          <article>
+            <strong>&gt;10 pp</strong>
+            <span>drop under corrupted feedback in 3D scenes</span>
+          </article>
+        </div>
+
+        <a class="figure-link" href="./assets/accuracy-results.png" target="_blank" rel="noopener">
+          <img class="figure figure-wide" src="./assets/accuracy-results.png" alt="See2Think final-answer accuracy across models, tasks, and inference settings" loading="lazy">
+        </a>
+        <p class="caption"><strong>No single setting dominates.</strong> The best visual-reasoning strategy changes across model families and visual environments.</p>
+
+        <div class="finding-list">
+          <article>
+            <span>Finding 1</span>
+            <h3>Task regime matters.</h3>
+            <p>Direct perception leads on explicit 2D diagrams, action planning slightly leads in 3D scenes, and real-world tasks show no clear aggregate winner.</p>
+          </article>
+          <article>
+            <span>Finding 2</span>
+            <h3>Rendering is the bottleneck.</h3>
+            <p>Models usually select a relevant visual action, but faithfully executing that action remains substantially harder.</p>
+          </article>
+          <article>
+            <span>Finding 3</span>
+            <h3>Usefulness and dependence differ.</h3>
+            <p>Correct rendering may add little net accuracy, while corrupted visual feedback can still cause measurable performance degradation.</p>
+          </article>
+        </div>
+
+        <a class="figure-link" href="./assets/process-results.png" target="_blank" rel="noopener">
+          <img class="figure figure-wide" src="./assets/process-results.png" alt="Process-level See2Think diagnosis across visual environments" loading="lazy">
+        </a>
+        <p class="caption"><strong>Process-level diagnosis.</strong> High action relevance contrasts with lower render faithfulness; high feedback uptake does not necessarily produce higher accuracy.</p>
+      </div>
+    </section>
+
+    <section class="section section-citation" id="citation">
+      <div class="section-label">
+        <span>05</span>
+        <p>Citation</p>
+      </div>
+      <div class="section-content">
+        <p class="kicker">BibTeX</p>
+        <h2>Cite See2Think</h2>
+        <div class="code-wrap">
+          <button class="copy-button" type="button" data-copy-target="bibtex">Copy</button>
+          <pre id="bibtex"><code>@article{yan2026see2think,
+  title   = {See2Think: Do Multimodal Models Really Use
+             Intermediate Visual States?},
+  author  = {Yan, Siyu and Yan, Zhuoran and Xu, Haiying and
+             Zhou, Panhao and Chen, Jingyu and Ji, Chenhao and
+             Cao, Shuo and Zhang, Yongheng and Liu, Haoze and
+             Zhang, Siyu and Gu, Xiwen and Liu, Yihao and
+             Wang, Alex Jinpeng},
+  year    = {2026}
+}</code></pre>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wordmark" aria-hidden="true"><span>See</span><strong>2</strong><span>Think</span></div>
+    <p>Do multimodal models really use intermediate visual states?</p>
+    <div>
+      <a href="./See2Think.pdf" target="_blank" rel="noopener">Paper</a>
+      <a href="https://github.com/CSU-JPG/See2Think" target="_blank" rel="noopener">Code</a>
+      <a href="../">Siyu Yan</a>
+    </div>
+  </footer>
+
+  <script src="./script.js"></script>
+</body>
+</html>
