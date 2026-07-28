@@ -20,20 +20,6 @@
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <header class="site-nav">
-    <a class="wordmark" href="#top" aria-label="See2Think home">
-      <span>See</span><strong>2</strong><span>Think</span>
-    </a>
-    <nav aria-label="Page sections">
-      <a href="#overview">Overview</a>
-      <a href="#benchmark">Benchmark</a>
-      <a href="#vaot">VAoT</a>
-      <a href="#findings">Findings</a>
-      <a href="#citation">Citation</a>
-    </nav>
-    <a class="home-link" href="../">Siyu Yan ↗</a>
-  </header>
-
   <main id="main">
     <section class="hero" id="top">
       <div class="hero-inner">
@@ -58,42 +44,10 @@
         </div>
 
         <div class="hero-visual">
-          <a href="./assets/framework-overview.png" target="_blank" rel="noopener" aria-label="Open the See2Think framework figure at full size">
-            <img src="./assets/framework-overview.png" alt="See2Think framework comparing traditional evaluation with process-level diagnosis">
+          <a href="./assets/hero-landscape.png" target="_blank" rel="noopener" aria-label="Open the See2Think visual-reasoning landscape at full size">
+            <img src="./assets/hero-landscape.png" alt="Abstract visual-reasoning landscape with translucent panels and geometric states">
           </a>
-          <p>From final-answer evaluation to controlled diagnosis of visual-state use.</p>
         </div>
-      </div>
-
-      <div class="contribution-grid" aria-label="Main contributions">
-        <article>
-          <span class="card-index">01</span>
-          <div>
-            <h2>See2ThinkBench</h2>
-            <p>1,200 open-ended, visually dependent problems spanning 12 task categories.</p>
-          </div>
-        </article>
-        <article>
-          <span class="card-index">02</span>
-          <div>
-            <h2>Three visual worlds</h2>
-            <p>2D structured reasoning, 3D scenes, and real-world visual reasoning.</p>
-          </div>
-        </article>
-        <article>
-          <span class="card-index">03</span>
-          <div>
-            <h2>Process diagnosis</h2>
-            <p>Action relevance, render faithfulness, and feedback uptake are measured separately.</p>
-          </div>
-        </article>
-        <article>
-          <span class="card-index">04</span>
-          <div>
-            <h2>Controlled interventions</h2>
-            <p>Corrupted feedback reveals when models behaviorally depend on returned visual states.</p>
-          </div>
-        </article>
       </div>
     </section>
 
@@ -146,6 +100,10 @@
             enabling matched outcome-level and process-level evaluation.
           </p>
         </div>
+        <a class="figure-link motivation-figure" href="./assets/framework-overview.png" target="_blank" rel="noopener">
+          <img class="figure figure-wide" src="./assets/framework-overview.png" alt="See2Think framework comparing traditional evaluation with process-level diagnosis" loading="lazy">
+        </a>
+        <p class="caption"><strong>Figure 1.</strong> See2Think moves beyond final-answer evaluation to diagnose action relevance, render faithfulness, and feedback uptake.</p>
         <aside class="takeaway">
           <span>Core question</span>
           <p>When a model produces an intermediate visual state, is it reasoning <em>with</em> that state—or merely producing visual decoration?</p>
@@ -284,13 +242,8 @@
     </section>
 
     <section class="section section-citation" id="citation">
-      <div class="section-label">
-        <span>05</span>
-        <p>Citation</p>
-      </div>
       <div class="section-content">
-        <p class="kicker">BibTeX</p>
-        <h2>Cite See2Think</h2>
+        <h2>BibTeX</h2>
         <div class="code-wrap">
           <button class="copy-button" type="button" data-copy-target="bibtex">Copy</button>
           <pre id="bibtex"><code>@article{yan2026see2think,
@@ -307,16 +260,6 @@
       </div>
     </section>
   </main>
-
-  <footer>
-    <div class="wordmark" aria-hidden="true"><span>See</span><strong>2</strong><span>Think</span></div>
-    <p>Do multimodal models really use intermediate visual states?</p>
-    <div>
-      <a href="./See2Think.pdf" target="_blank" rel="noopener">Paper</a>
-      <a href="https://github.com/CSU-JPG/See2Think" target="_blank" rel="noopener">Code</a>
-      <a href="../">Siyu Yan</a>
-    </div>
-  </footer>
 
   <script src="./script.js"></script>
 </body>
