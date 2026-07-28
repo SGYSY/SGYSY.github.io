@@ -123,6 +123,11 @@ p {
   background: transparent;
 }
 
+.publication img.see2think-thumb {
+  height: auto;
+  aspect-ratio: 1790 / 805;
+}
+
 .publication p {
   margin: 1px 0;
 }
@@ -227,6 +232,10 @@ footer {
     width: 100%;
     height: auto;
     aspect-ratio: 2 / 1;
+  }
+
+  .publication img.see2think-thumb {
+    aspect-ratio: 1790 / 805;
   }
 
   .experience {
