@@ -838,7 +838,15 @@ body {
   padding-top: clamp(68px, 8vw, 116px);
   padding-bottom: clamp(68px, 8vw, 108px);
   color: #fff;
-  background: #3979b9;
+  background:
+    radial-gradient(
+      circle at 105% 118%,
+      #f1f3a8 0%,
+      #85dec5 27%,
+      rgba(73, 167, 224, 0.96) 55%,
+      rgba(73, 167, 224, 0) 78%
+    ),
+    linear-gradient(120deg, #044c99 0%, #095daf 38%, #2379c2 70%, #3994d2 100%);
   border-bottom: 0;
 }
 
